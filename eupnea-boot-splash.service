@@ -1,0 +1,11 @@
+[Unit]
+Description=Show eupnea boot splash
+Before=local-fs.target sysinit.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/busybox-alpine.static fbsplash -s /usr/share/eupnea_boot_logo.ppm
+
+[Install]
+WantedBy=basic.target
